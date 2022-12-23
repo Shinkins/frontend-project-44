@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-import biba from './cli.js';
-console.log(biba());
+import grettingsPlayer from './src/cli.js'
+
+console.log(grettingsPlayer());

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 
- export function grettingsPlayer(name) {
-    const name = readlineSync.question('May I have your name?');
+ export default function grettingsPlayer() {
     console.log('Welcome to the Brain Games!');
-    console.log(name);
+    const name = readlineSync.question('May I have your name? ');
+    return `Hello, ${name}!`;
 }
 
 export function biba () {
