@@ -9,6 +9,7 @@ function getRandomNumber() {
 }
 
 function evenGame() {
+  const player = grettingsPlayer();
   let correct = 0
   let notCorrect = 0
   console.log('Answer "yes" if the number is even, otherwise answer "no".')
@@ -19,17 +20,18 @@ function evenGame() {
   
   if (rnb % 2 === 0 && outputAnswer === "yes" ) {
     correct++;
-    console.log(correct);
     console.log('Correct!');
-  } 
-  if (rnb % 2 !== 0 && outputAnswer === 'no') {
+  } else if (rnb % 2 !== 0 && outputAnswer === 'no') {
     correct++;
-    console.log(correct)
-    console.log('Corrext!')
+    console.log('Correcct!')
   } 
-  if (correct === 3) {
-    return 'Congratulations, Sam!'
+  else {
+    return `Lets try again, ${player}!`
   }
+  }
+  if (correct === 3) {
+    return `Congratulations, ${player}!`
   };
 }
 export default evenGame;
+console.log(evenGame());
