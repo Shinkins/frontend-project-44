@@ -1,23 +1,36 @@
-function eventGate(randomNumber) {
-    switch(randomNumber) {
-        case 1:
-            console.log('+')
+#!/usr/bin/env node
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
+import logic, { getRandomNumber } from "./src/index.js";
+import { getRandomOperator } from "./src/index.js";
+
+function correct(number1, number2, oper) {
+    let result = null;
+    switch(oper) {
+        case '+':
+            result = number1 + number2;
             break;
-        case 2:
-            console.log('-')
+        case '-':
+            result = number1 - number2;
             break;
-        
+        case '*':
+            result = number1 * number2;
+            break;
         default:
-            console.log('*')
-            break;
     };
+    return result;
 };
 
-function getRandomNumber() {
-    let randomNumber = 0;
-    const min = 1;
-    const max = 2;
-    return randomNumber = Math.floor(Math.random() * (max - min)) + min;
-  }
+const description = 'What is the result of the expression?';
 
-eventGate();
+const game = () => {
+    const number1 = getRandomNumber(1, 20);
+    const number2 = getRandomNumber(1, 20);
+    const oper = getRandomOperator();
+    const question = `${number1} ${oper} ${number2}`;
+    const answer = correct(number1, number2, oper).toString();
+    return [question, answer];
+};
+const start = () => logic(description, game);
+start();
+export default start;
