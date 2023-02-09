@@ -22,7 +22,6 @@ const logic = (description, game) => {
         const gameData = game()
         const question = gameData[0]
         const answer = gameData[1]
-        console.log(gameData[1])
         console.log(`Qustion: ${question}`)
         const userAnswer = readlineSync.question('Your answer: ')
 

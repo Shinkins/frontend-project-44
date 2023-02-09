@@ -15,3 +15,6 @@ brain-even:
 
 fix:
 	npx eslint . --fix
+
+brain-calc:
+	node bin/brain-calc
