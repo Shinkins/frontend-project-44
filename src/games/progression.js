@@ -1,29 +1,28 @@
-import grettingsPlayer from '../cli.js';
 import logic, { getRandomNumber } from '../index.js';
 
-const getProgression = () =>{
-    const array = [];
-    
-    const plusProg  = getRandomNumber(1, 11)
-    const arrayCount = getRandomNumber(5, 11);
-    const iCount = getRandomNumber(0, 6); 
-    console.log(plusProg);
-    for (let i = iCount; i < arrayCount * plusProg; i += plusProg) {
+const getProgression = (plus, arrcount, icount) => {
+    const array = []; 
+    for (let i = icount; i < arrcount * plus; i += plus) {
         array.push(i);
-    }
-    const tourcthi = getRandomNumber(0, array.length);
-    console.log(tourcthi);
-    const secretNumber = array[tourcthi];
-    array[tourcthi] = '..';
-    return array.join(' ');
+    }    
+    return array;
 }
 
 const description = 'What number is missing in the progression?'
 
-const game = (description, getProgression) => {
-   const answer = secretPlace
-   console.log(answer);    
+const game = () => {
+    const plusProg  = getRandomNumber(1, 11)
+    const arrayCount = getRandomNumber(5, 11);
+    const iCount = getRandomNumber(0, 6);
+    const arr = getProgression(plusProg, arrayCount, iCount);
+    const secretIndex = getRandomNumber(0, arr.length);
+    const secretNumber = arr[secretIndex];
+    const answer = secretNumber.toString();
+    arr[secretIndex] = '..';
+    const question = arr.join(' ');
+    return [question, answer]
 }
 
-console.log(getProgression());
-//console.log(game())
+const start = () => logic(description, game);
+
+export default start;
