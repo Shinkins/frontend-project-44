@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import grettingsPlayer from './cli.js';
 
 export function getRandomNumber(min = 1, max = 100) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -12,9 +13,7 @@ export const getRandomOperator = () => {
 };
 
 const convertToLogic = (description, game) => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const player = grettingsPlayer();
   console.log(description);
 
   for (let i = 0; i < 3; i += 1) {
@@ -27,12 +26,12 @@ const convertToLogic = (description, game) => {
     if (answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${player}!`);
       return;
     }
   }
 
-  console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${player}!`);
 };
 
 export default convertToLogic;

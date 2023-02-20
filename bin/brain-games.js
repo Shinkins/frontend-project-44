@@ -1,2 +1,4 @@
 #!/usr/bin/env node
-import grettingsPlayer from './src/cli.js';
+import grettingsPlayer from "../src/cli.js";
+
+grettingsPlayer();
