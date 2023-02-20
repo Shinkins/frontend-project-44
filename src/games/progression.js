@@ -1,26 +1,25 @@
 import convertToLogic, { getRandomNumber } from '../index.js';
 
-const getProgression = (plus, arrcount, icount) => {
-  const array = [];
-  for (let i = icount; i < arrcount * plus; i += plus) {
-    array.push(i);
+const getProgression = () => {
+  const arr = [];
+  const progressionStep = getRandomNumber(1, 15);
+  const progressionLength = getRandomNumber(5, 10);
+  for (let i = progressionStep; i <= progressionStep * progressionLength; i += progressionStep) {
+    arr.push(i);
   }
-  return array;
+  arr[getRandomNumber(1, arr.length - 2)] = '..';
+  const correctAnswer = arr[arr.indexOf('..') - 1] + progressionStep;
+  const result = arr.join(' ');
+  return [correctAnswer, result];
 };
 
 const description = 'What number is missing in the progression?';
 
 const game = () => {
-  const plusProg = getRandomNumber(1, 11);
-  const arrayCount = getRandomNumber(5, 11);
-  const iCount = getRandomNumber(0, 6);
-  const arr = getProgression(plusProg, arrayCount, iCount);
-  const secretIndex = getRandomNumber(0, arr.length);
-  const secretNumber = arr[secretIndex];
-  const answer = secretNumber.toString();
-  arr[secretIndex] = '..';
-  const question = arr.join(' ');
-  return [question, answer];
+  const answers = getProgression();
+  const answer = answers[0];
+  const question = answers[1];
+  return [question, String(answer)];
 };
 
 const startGame = () => convertToLogic(description, game);
