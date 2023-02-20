@@ -1,4 +1,4 @@
-import logic, { getRandomNumber } from '../index.js';
+import convertToLogic, { getRandomNumber } from '../index.js';
 
 const itsPrime = (num) => {
   for (let i = 2; i < num; i++) {
@@ -18,6 +18,6 @@ const game = () => {
   return [question, answer];
 };
 
-const start = () => logic(description, game);
+const startGame = () => convertToLogic(description, game);
 
-export default start;
+export default startGame;

@@ -1,4 +1,4 @@
-import logic, { getRandomNumber } from '../index.js';
+import convertToLogic, { getRandomNumber } from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -10,6 +10,6 @@ const game = () => {
   return [question, answer];
 };
 
-const start = () => logic(description, game);
+const startGame = () => convertToLogic(description, game);
 
-export default start;
+export default startGame;

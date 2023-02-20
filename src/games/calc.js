@@ -1,4 +1,4 @@
-import logic, { getRandomNumber, getRandomOperator } from '../index.js';
+import convertToLogic, { getRandomNumber, getRandomOperator } from '../index.js';
 
 function correct(number1, number2, oper) {
   let result = null;
@@ -27,6 +27,6 @@ const game = () => {
   const answer = correct(number1, number2, oper).toString();
   return [question, answer];
 };
-const start = () => logic(description, game);
+const startGame = () => convertToLogic(description, game);
 
-export default start;
+export default startGame;

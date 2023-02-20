@@ -11,7 +11,7 @@ export const getRandomOperator = () => {
   return operator;
 };
 
-const logic = (description, game) => {
+const convertToLogic = (description, game) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -21,7 +21,7 @@ const logic = (description, game) => {
     const gameData = game();
     const question = gameData[0];
     const answer = gameData[1];
-    console.log(`Qustion: ${question}`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (answer === userAnswer) {
@@ -35,4 +35,4 @@ const logic = (description, game) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export default logic;
+export default convertToLogic;
