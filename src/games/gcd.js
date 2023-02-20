@@ -16,7 +16,7 @@ const getGCD = (number1, number2) => {
 const game = () => {
   const num1 = getRandomNumber(1, 100);
   const num2 = getRandomNumber(1, 100);
-  const answer = getGCD(num1, num2);
+  const answer = String(getGCD(num1, num2));
   const question = `${num1} ${num2}`;
   return [question, answer];
 };
