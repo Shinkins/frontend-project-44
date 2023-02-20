@@ -1,5 +1,5 @@
 install:
-	npm ci;
+	npm ci
 
 brain-games:
 	node bin/brain-games.js
@@ -11,7 +11,7 @@ lint:
 	npx eslint .
 
 brain-even:
-	node bin/brain-even
+	node bin/brain-even.js
 
 fix:
 	npx eslint . --fix
@@ -20,10 +20,10 @@ brain-calc:
 	node bin/brain-calc.js
 
 brain-gcd:
-	node bin/brain-gcd
+	node bin/brain-gcd.js
 
 brain-progression:
-	node bin/brain-progression
+	node bin/brain-progression.js
 
 brain-prime:
-	node bin/brain-prime
+	node bin/brain-prime.js
