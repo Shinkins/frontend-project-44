@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Anatoliy",
   "license": "ISC",
   "type": "module",
   "bin": {
@@ -16,6 +16,13 @@
     "brain-gcd": "bin/brain-gcd.js",
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shinkins/frontend-project-44.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Shinkins/frontend-project-44/issues"
   },
   "dependencies": {
     "readline-sync": "github:anseki/readline-sync"
