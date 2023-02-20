@@ -5,4 +5,4 @@ export default function grettingsPlayer() {
   const player = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${player}!`);
   return player;
-};
+}
