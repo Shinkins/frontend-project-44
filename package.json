@@ -25,7 +25,7 @@
     "url": "https://github.com/Shinkins/frontend-project-44/issues"
   },
   "dependencies": {
-    "readline-sync": "github:anseki/readline-sync"
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
