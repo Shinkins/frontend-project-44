@@ -3,14 +3,16 @@ import convertToLogic, { getRandomNumber } from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const getGCD = (number1, number2) => {
-  while (number1 !== number2) {
-    if (number1 > number2) {
-      number1 -= number2;
-    } else if (number1 < number2) {
-      number2 -= number1;
+  let a = number1;
+  let b = number2;
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else if (a < b) {
+      b -= a;
     }
   }
-  return number1;
+  return a;
 };
 
 const game = () => {
